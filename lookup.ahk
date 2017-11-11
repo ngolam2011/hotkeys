@@ -1,4 +1,5 @@
-^!l::
+
+^!d::
 	InputBox, OutputVar, Lookup, Word to look up?
 	if ErrorLevel
 		return
@@ -38,4 +39,7 @@ return
 
 ^!w::
 	Run, www.google.com
+return
+
+!q::Send !{F4}
 return

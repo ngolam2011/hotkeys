@@ -1,4 +1,5 @@
-^!l::
+
+^!d::
 	InputBox, OutputVar, Lookup, Word to look up?
 	if ErrorLevel
 		return
@@ -24,6 +25,8 @@ return
 
 ^!,::
 	Send, {Ctrl Down}c{Ctrl Up}
+	query = %Clipboard%
+	Run, https://translate.google.com/?hl=vi#en/vi/%query%
 return
 
 ^!c::
@@ -36,4 +39,7 @@ return
 
 ^!w::
 	Run, www.google.com
+return
+
+^q::Send !{F4}
 return
