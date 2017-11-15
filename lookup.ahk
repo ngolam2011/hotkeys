@@ -1,3 +1,17 @@
+; ------------Variable declerations-------------
+VimMode = 0	
+
+;------------Variable declerations-------------
+#MaxHotkeysPerInterval 200
+; ------------Set vim mode-------------
+^!V::
+	if VimMode
+		VimMode = 1
+	else
+		VimMode = 0
+return
+; ------------Set vim mode-------------
+
 
 ^!d::
 	InputBox, OutputVar, Lookup, Word to look up?
@@ -65,4 +79,15 @@ return
 return
 
 ^!I:: Click 2
+return
+
+#If VimMode
+	^!Z:: 
+		Click WheelUp
+	return
+
+
+#If VimMode = 1
+D:: 
+	Click WheelDown
 return
