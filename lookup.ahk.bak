@@ -41,5 +41,28 @@ return
 	Run, www.google.com
 return
 
-^q::Send !{F4}
+!q::Send !{F4}
+return
+
+^J:: MouseMove, 0, 10, 0, R
+return
+
+^K:: MouseMove, 0, -10, 0, R
+return
+
+^L:: MouseMove, 10, 0, 0, R
+return
+
+^H:: MouseMove, -10, 0, 0, R
+return
+
+^O:: Click Down
+return
+^!O:: Click up right
+return
+
+^I:: Click
+return
+
+^!I:: Click 2
 return
