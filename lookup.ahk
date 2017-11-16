@@ -96,9 +96,10 @@ return
 ^!a::
 	Run, C:\Program Files (x86)\Anki\anki.exe
 return
-
+;-------Windows----------
 !q::Send !{F4}
 return
+;-------Windows---------
 
 
 ^J:: MouseMove, 0, %StepToMove%, 0, R
