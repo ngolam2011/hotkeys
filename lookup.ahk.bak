@@ -99,10 +99,6 @@ return
 ;-------Windows----------
 !q::Send !{F4}
 return
-
-!A::
-	Send, {LWin Up}
-return
 ;-------Windows---------
 
 

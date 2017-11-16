@@ -20,7 +20,7 @@ return
 	SetTimer, RemoveToolTip, 3000
 return
 
-^+R::
+^!R::
 	StepToMove = 20
 	ToolTip, Step to move: %StepToMove%
 	SetTimer, RemoveToolTip, 3000
