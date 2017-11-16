@@ -1,6 +1,7 @@
 ; ------------Variable declerations-------------
 VimMode = false
 StepToMove = 20
+MovingMode = false
 
 ;------------Variable declerations-------------
 #MaxHotkeysPerInterval 200
@@ -50,6 +51,24 @@ return
 return
 ; ------------Set vim mode-------------
 
+
+; ------------Set moving mode-------------
+^!M::
+	if MovingMode = false
+	{
+		MovingMode = true
+		ToolTip, Enable MovingMode Mode
+		SetTimer, RemoveToolTip, 3000
+	}
+	else
+	{
+		MovingMode = false
+		ToolTip, Disable MovingMode Mode
+		SetTimer, RemoveToolTip, 3000
+	}
+return
+; ------------Set moving mode-------------
+
 ; ------------Vim emulator-------------
 #If %VimMode% = 1
 	k:: 
@@ -59,10 +78,10 @@ return
 		Send, {Down}
 	return
 	h:: 
-		Send, {Right}
+		Send, {Left}
 	return
 	l:: 
-		Send, {Left}
+		Send, {Right}
 	return
 
 return
@@ -97,9 +116,25 @@ return
 
 ^Y:: Click Down
 return
-^!Y:: Click up right
+^!Y:: 
+	Click up right
+	Send !{F4}
+	
 return
 
+
+
+; ------------Moving emulator-------------
+#If %MovingMode% = 1
+	Space::
+	Click 2
+	return
+	
+	>::
+	Click
+	return
+#If
+; ------------Moving emulator-------------
 ;---------------------Preference--------------------
 /*
 ^!d::
